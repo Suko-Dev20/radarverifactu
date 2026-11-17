@@ -334,5 +334,113 @@
         "Mantén un registro inalterable de honorarios y comisiones conforme a la Ley Antifraude."
       ]
     }
+  ],
+  "faq_guides": [
+    {
+      "slug": "obligatorio-verifactu-autonomos-cuando-entra",
+      "title": "¿Cuándo es obligatorio Verifactu para autónomos en España?",
+      "short_title": "Cuándo es obligatorio Verifactu",
+      "summary": "Fechas clave de entrada en vigor, a quién afecta el reglamento antifraude y qué excepciones existen.",
+      "direct_answer": "Todos los autónomos y sociedades que utilicen un programa informático de facturación en territorio común deben adaptarlo al Reglamento Verifactu (Ley Antifraude 11/2021 y RD 1007/2023) antes de los plazos oficiales fijados por la AEAT, garantizando registros inalterables con código QR.",
+      "bullets": [
+        "Afecta a pymes (Impuesto de Sociedades) y autónomos que emitan facturas mediante software, hoja de cálculo o TPV.",
+        "Cada factura debe generar un registro hash encadenado imposible de borrar sin dejar rastro.",
+        "Puedes elegir entre enviar automáticamente los registros a la AEAT (modo Verifactu) o conservarlos firmados localmente, aunque el modo Verifactu evita inspecciones de software."
+      ],
+      "recommended_tool_ids": ["quipu", "contasimple"]
+    },
+    {
+      "slug": "multas-sanciones-verifactu-usar-excel-word",
+      "title": "¿Puedo seguir haciendo facturas en Excel o Word con Verifactu? Multas",
+      "short_title": "Facturar en Excel o Word y multas",
+      "summary": "Por qué las hojas de cálculo tradicionales dejan de ser válidas si se consideran sistema informático y cómo evitar sanciones.",
+      "direct_answer": "La Ley Antifraude contempla sanciones muy elevadas (hasta 50.000 € por ejercicio para el usuario de software no certificado de doble uso). Seguir con plantillas manuales de Excel o Word conlleva riesgos legales si se utilizan como sistema de facturación y gestión, además de hacerte perder tiempo frente a un programa homologado económico.",
+      "bullets": [
+        "Excel y Word no generan código hash encadenado, firma electrónica ni código QR verificable por la AEAT.",
+        "Pasarte a un programa certificado como Contasimple (desde 0 €/mes en plan básico) o Quipu elimina por completo el riesgo de sanción.",
+        "Además automatizas los borradores trimestrales de IVA (303) e IRPF (130)."
+      ],
+      "recommended_tool_ids": ["contasimple", "quipu"]
+    },
+    {
+      "slug": "software-verifactu-gratis-autonomos",
+      "title": "Software Verifactu gratis para autónomos: qué opciones cumplen sin pagar de más",
+      "short_title": "Software Verifactu gratis",
+      "summary": "Qué alternativas gratuitas o de coste mínimo existen en España para emitir facturas legales si haces pocas facturas al mes.",
+      "direct_answer": "Si emites pocas facturas al mes y quieres empezar con coste mínimo, existen programas españoles adaptados a Verifactu con plan gratuito permanente (como Contasimple Básico) o pruebas gratuitas amplias, además de la aplicación pública básica de la AEAT cuando esté habilitada.",
+      "bullets": [
+        "Contasimple ofrece un plan Básico gratuito permanente para autónomos con poco volumen de facturas.",
+        "Quipu permite 15 días de prueba gratuita sin tarjeta para comprobar la lectura OCR de tickets y previsión de impuestos.",
+        "Si necesitas personalizar tu marca, automatizar remesas o tener soporte prioritario, los planes de pago arrancan en torno a 8 €–14 €/mes."
+      ],
+      "recommended_tool_ids": ["contasimple", "billin"]
+    },
+    {
+      "slug": "verifactu-vs-ticketbai-diferencias",
+      "title": "Verifactu vs TicketBAI: diferencias si facturas en País Vasco o resto de España",
+      "short_title": "Verifactu vs TicketBAI",
+      "summary": "Qué sistema te corresponde según tu domicilio fiscal y qué programas soportan ambos estándares.",
+      "direct_answer": "TicketBAI es obligatorio en las Haciendas Forales del País Vasco (Álava, Bizkaia/Batuz y Gipuzkoa), mientras que Verifactu aplica al territorio común español (y Navarra prepara su propio marco). Si trabajas con clientes de varias provincias o tienes sede en territorio común, necesitas un software certificado para ambos.",
+      "bullets": [
+        "El código QR y el encadenamiento de facturas son similares en concepto, pero los esquemas XML y envíos cambian.",
+        "Programas como Holded, Quipu y Contasimple ya soportan tanto TicketBAI como la adaptación a Verifactu.",
+        "No compres software extranjero genérico que no esté homologado ante las Haciendas españolas."
+      ],
+      "recommended_tool_ids": ["quipu", "holded"]
+    },
+    {
+      "slug": "verifactu-facturas-exentas-iva-medicos-formacion",
+      "title": "Verifactu en actividades exentas de IVA (médicos, psicólogos, profesores)",
+      "short_title": "Verifactu sin IVA (Salud/Docencia)",
+      "summary": "Cómo deben facturar los profesionales sanitarios, psicólogos y formadores exentos de IVA bajo el nuevo reglamento.",
+      "direct_answer": "Estar exento de IVA por actividad sanitaria o educativa no exime de cumplir con el reglamento de facturación Verifactu si utilizas software para emitir tus facturas o recibos. Debes emitir facturas con la mención legal de exención y registro inalterable.",
+      "bullets": [
+        "Configura una serie de facturación con IVA 0% e indica el artículo de exención de la Ley del IVA (art. 20).",
+        "Quipu y Holded permiten guardar plantillas de conceptos exentos de IVA y aplicar retención de IRPF si facturas a empresas.",
+        "Combínalo con una herramienta de reservas y citas de pago único para evitar ausencias de pacientes."
+      ],
+      "recommended_tool_ids": ["quipu", "contasimple"]
+    },
+    {
+      "slug": "verifactu-alquiler-locales-inmuebles",
+      "title": "¿Tienen que usar Verifactu los propietarios que alquilan locales comerciales?",
+      "short_title": "Verifactu en alquiler de locales",
+      "summary": "Obligaciones de facturación mensual con IVA y retención IRPF para arrendadores de locales y oficinas.",
+      "direct_answer": "Los particulares o sociedades que alquilan locales comerciales (sujetos a IVA del 21% y retención del 19% de IRPF) están obligados a emitir factura mensual. Si utilizan software de facturación para generar esos recibos/facturas recurrentes, este debe estar adaptado a Verifactu.",
+      "bullets": [
+        "Automatizar una factura recurrente mensual al inquilino te ahorra errores en retenciones e IVA.",
+        "Con Contasimple o Quipu puedes dejar programado el envío automático cada día 1 de mes.",
+        "Además obtienes automáticamente el cálculo del Modelo 303 trimestral sin pagar gestoría cara."
+      ],
+      "recommended_tool_ids": ["contasimple", "quipu"]
+    },
+    {
+      "slug": "como-adaptar-facturacion-verifactu-paso-a-paso",
+      "title": "Checklist en 5 pasos para adaptar tu negocio a Verifactu sin complicaciones",
+      "short_title": "Checklist Verifactu en 5 pasos",
+      "summary": "Guía práctica rápida para elegir programa, migrar tus clientes y no cometer errores con la numeración.",
+      "direct_answer": "Adaptarte a Verifactu lleva menos de una tarde si sigues un orden lógico: elegir un software certificado según tu volumen, importar tu listado de clientes, configurar las series correlativas y automatizar los gastos.",
+      "bullets": [
+        "1. Calcula tu perfil en nuestra calculadora gratuita para no pagar por funciones de ERP que no usas.",
+        "2. Elige un programa español homologado (Contasimple, Quipu, Billin o Holded).",
+        "3. Sube tu logo, datos fiscales y activa la numeración correlativa sin saltos.",
+        "4. Activa el envío de facturas y gastos por foto/OCR para no perder IVA deducible.",
+        "5. Recorta gastos fijos sustituyendo herramientas mensuales caras por alternativas de pago único."
+      ],
+      "recommended_tool_ids": ["quipu", "contasimple"]
+    },
+    {
+      "slug": "cuanto-cuesta-programa-verifactu-ahorrar",
+      "title": "Cuánto cuesta cumplir con Verifactu al año y cómo compensar el gasto",
+      "short_title": "Coste real de Verifactu al año",
+      "summary": "Comparativa de precios anuales de software de facturación en España y truco para que te salga gratis ahorrando en otras herramientas.",
+      "direct_answer": "Cumplir con Verifactu cuesta entre 0 € y 170 € al año en programas pensados para autónomos (o desde ~174 €/año en un ERP completo). La mejor forma de que no afecte a tu bolsillo es eliminar suscripciones mensuales innecesarias en email marketing, citas o firma digital.",
+      "bullets": [
+        "Contasimple tiene plan básico desde 0 € y planes completos alrededor de 120 €/año.",
+        "Quipu y Holded rondan los 168 €–175 €/año en sus planes iniciales.",
+        "Usando herramientas con plan gratuito o pago único para el resto de tu negocio puedes ahorrar más de 500 € al año."
+      ],
+      "recommended_tool_ids": ["contasimple", "quipu"]
+    }
   ]
 }

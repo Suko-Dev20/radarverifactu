@@ -8,6 +8,7 @@ const ROOT_DIR = path.resolve(__dirname, '..');
 const PUBLIC_DIR = path.join(ROOT_DIR, 'public');
 const VS_DIR = path.join(PUBLIC_DIR, 'vs');
 const SECTOR_DIR = path.join(PUBLIC_DIR, 'sector');
+const GUIAS_DIR = path.join(PUBLIC_DIR, 'guias');
 
 const affiliates = JSON.parse(
   fs.readFileSync(path.join(ROOT_DIR, 'config', 'affiliates.json'), 'utf8')
@@ -20,6 +21,7 @@ function ensureCleanDirs() {
   fs.mkdirSync(PUBLIC_DIR, { recursive: true });
   fs.mkdirSync(VS_DIR, { recursive: true });
   fs.mkdirSync(SECTOR_DIR, { recursive: true });
+  fs.mkdirSync(GUIAS_DIR, { recursive: true });
 }
 
 function escapeHtml(str) {
@@ -1411,6 +1413,13 @@ function buildIndexPage(vsPairs) {
     )
     .join('');
 
+  const guideLinksHtml = (catalog.faq_guides || [])
+    .map(
+      (g) =>
+        `<a class="dir-link" href="guias/${escapeHtml(g.slug)}.html">${escapeHtml(g.short_title)}</a>`
+    )
+    .join('');
+
   const bodyHtml = `
   <section class="hero">
     <div class="container hero-inner">
@@ -1436,8 +1445,8 @@ function buildIndexPage(vsPairs) {
           <span class="stat-label">Ahorro medio sustituyendo SaaS mensuales por licencias de pago único</span>
         </div>
         <div class="stat-item">
-          <span class="stat-value">${vsPairs.length + catalog.professions.length} Guías</span>
-          <span class="stat-label">Comparativas directas cara a cara y rankings por profesión</span>
+          <span class="stat-value">${vsPairs.length + catalog.professions.length + (catalog.faq_guides || []).length} Guías</span>
+          <span class="stat-label">Comparativas directas, rankings por profesión y dudas Verifactu</span>
         </div>
       </div>
     </div>
@@ -1578,8 +1587,12 @@ function buildIndexPage(vsPairs) {
         </div>
         <div class="dir-box">
           <h3>Guías por Profesión (${catalog.professions.length} sectores)</h3>
-          <div class="dir-links">
+          <div class="dir-links" style="margin-bottom:20px;">
             ${sectorLinksHtml}
+          </div>
+          <h3>Dudas Frecuentes Verifactu (${(catalog.faq_guides || []).length} guías)</h3>
+          <div class="dir-links">
+            ${guideLinksHtml}
           </div>
         </div>
       </div>
@@ -1869,6 +1882,92 @@ function buildSectorPage(profession) {
   });
 }
 
+function buildGuidePage(guide) {
+  const recTools = (guide.recommended_tool_ids || [])
+    .map((id) => catalog.verifactu_tools.find((t) => t.id === id))
+    .filter(Boolean);
+
+  const otherGuidesHtml = (catalog.faq_guides || [])
+    .filter((g) => g.slug !== guide.slug)
+    .slice(0, 6)
+    .map((g) => `<a class="dir-link" href="${escapeHtml(g.slug)}.html">${escapeHtml(g.short_title)}</a>`)
+    .join('');
+
+  const bodyHtml = `
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">Inicio</a> &rsaquo; <a href="../index.html#directorio">Guías Verifactu</a> &rsaquo; ${escapeHtml(guide.short_title)}
+      </div>
+      <h1>${escapeHtml(guide.title)}</h1>
+      <p>${escapeHtml(guide.summary)}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="verdict-box">
+        <h2>Respuesta directa</h2>
+        <p style="margin-bottom:14px; font-size:0.96rem; color:var(--foreground);">${escapeHtml(guide.direct_answer)}</p>
+        <ul class="check-list" style="margin-bottom:16px;">
+          ${guide.bullets.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}
+        </ul>
+        <a href="../index.html#calculadora" class="btn btn-primary btn-sm">Calcular mi combinación óptima gratis</a>
+      </div>
+
+      <div class="section-header">
+        <span class="section-kicker">Opciones recomendadas</span>
+        <h2>Programas homologados recomendados para este caso</h2>
+      </div>
+
+      <div class="two-col">
+        ${recTools
+          .map((tool, idx) => {
+            const url = escapeHtml(getToolAffiliateUrl(tool.id));
+            return `
+            <article class="tool-card">
+              <div>
+                <div class="tool-top">
+                  <div class="tool-identity">
+                    <span class="tool-avatar">${escapeHtml(getMonogram(tool.name))}</span>
+                    <div>
+                      <h3>${escapeHtml(tool.name)}</h3>
+                      <span class="badge ${idx === 0 ? 'badge-green' : 'badge-neutral'}">Verifactu + Facturae</span>
+                    </div>
+                  </div>
+                  <span class="score-pill">${tool.score}/10</span>
+                </div>
+                <div class="tool-price">${escapeHtml(tool.price_label)}</div>
+                <p class="tool-desc">${escapeHtml(tool.best_for)}</p>
+                <ul class="check-list">
+                  ${tool.pros.slice(0, 3).map((p) => `<li>${escapeHtml(p)}</li>`).join('')}
+                </ul>
+              </div>
+              <a href="${url}" target="_blank" rel="sponsored noopener" class="btn btn-primary" style="width:100%;">
+                Probar ${escapeHtml(tool.name)} (${escapeHtml(tool.free_trial)}) ↗
+              </a>
+            </article>`;
+          })
+          .join('')}
+      </div>
+
+      <div class="dir-box">
+        <h3>Otras dudas frecuentes sobre Verifactu</h3>
+        <div class="dir-links">
+          ${otherGuidesHtml}
+        </div>
+      </div>
+    </div>
+  </section>`;
+
+  return buildPageShell({
+    title: `${guide.title} | ${affiliates.site.name}`,
+    description: guide.summary,
+    prefix: '../',
+    bodyHtml
+  });
+}
+
 function buildSitemap(vsPairs) {
   const domain = (affiliates.site.domain || 'https://radar-verifactu.pages.dev').replace(/\/+$/, '');
   const today = new Date().toISOString().split('T')[0];
@@ -1876,7 +1975,8 @@ function buildSitemap(vsPairs) {
   const urls = [
     `${domain}/`,
     ...vsPairs.map((p) => `${domain}/vs/${p.slug}.html`),
-    ...catalog.professions.map((p) => `${domain}/sector/mejor-software-verifactu-${p.slug}.html`)
+    ...catalog.professions.map((p) => `${domain}/sector/mejor-software-verifactu-${p.slug}.html`),
+    ...(catalog.faq_guides || []).map((g) => `${domain}/guias/${g.slug}.html`)
   ];
 
   const items = urls
@@ -1927,6 +2027,11 @@ function main() {
     );
   }
 
+  for (const guide of catalog.faq_guides || []) {
+    const html = buildGuidePage(guide);
+    fs.writeFileSync(path.join(GUIAS_DIR, `${guide.slug}.html`), html, 'utf8');
+  }
+
   fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), buildSitemap(vsPairs), 'utf8');
   fs.writeFileSync(
     path.join(PUBLIC_DIR, 'robots.txt'),
@@ -1935,7 +2040,7 @@ function main() {
   );
 
   console.log(
-    `[OK] Sitio generado en ${PUBLIC_DIR}: 1 index.html, ${vsPairs.length} páginas VS, ${catalog.professions.length} páginas sectoriales, sitemap.xml y robots.txt.`
+    `[OK] Sitio generado en ${PUBLIC_DIR}: 1 index.html, ${vsPairs.length} páginas VS, ${catalog.professions.length} páginas sectoriales, ${(catalog.faq_guides || []).length} guías FAQ, sitemap.xml y robots.txt.`
   );
 }
 
