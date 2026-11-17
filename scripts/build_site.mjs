@@ -1869,7 +1869,7 @@ function buildSectorPage(profession) {
 }
 
 function buildSitemap(vsPairs) {
-  const domain = (affiliates.site.domain || 'https://radarverifactu.pages.dev').replace(/\/+$/, '');
+  const domain = (affiliates.site.domain || 'https://radar-verifactu.pages.dev').replace(/\/+$/, '');
   const today = new Date().toISOString().split('T')[0];
 
   const urls = [
@@ -1929,7 +1929,7 @@ function main() {
   fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), buildSitemap(vsPairs), 'utf8');
   fs.writeFileSync(
     path.join(PUBLIC_DIR, 'robots.txt'),
-    `User-agent: *\nAllow: /\nSitemap: ${(affiliates.site.domain || 'https://radarverifactu.pages.dev').replace(/\/+$/, '')}/sitemap.xml\n`,
+    `User-agent: *\nAllow: /\nSitemap: ${(affiliates.site.domain || 'https://radar-verifactu.pages.dev').replace(/\/+$/, '')}/sitemap.xml\n`,
     'utf8'
   );
 

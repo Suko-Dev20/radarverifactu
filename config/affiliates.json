@@ -2,7 +2,7 @@
   "site": {
     "name": "RadarVerifactu",
     "tagline": "Comparador Verifactu + Chollos de Software sin Cuotas Mensuales",
-    "domain": "https://radarverifactu.pages.dev",
+    "domain": "https://radar-verifactu.pages.dev",
     "telegram_channel_url": "https://t.me/radarverifactu"
   },
   "verifactu_links": {

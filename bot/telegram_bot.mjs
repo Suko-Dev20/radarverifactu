@@ -41,7 +41,7 @@ function buildDealPost(deal) {
     affiliates.lifetime_links[deal.affiliate_key] ||
     affiliates.lifetime_links.appsumo_general ||
     affiliates.site.domain;
-  const siteUrl = (affiliates.site.domain || 'https://radarverifactu.pages.dev').replace(/\/+$/, '');
+  const siteUrl = (affiliates.site.domain || 'https://radar-verifactu.pages.dev').replace(/\/+$/, '');
   const annualOld = deal.replaces_monthly_eur * 12;
   const savings = annualOld - deal.lifetime_price_eur;
 
@@ -68,7 +68,7 @@ function buildDealPost(deal) {
 function buildVerifactuPost(toolA, toolB) {
   const urlA = affiliates.verifactu_links[toolA.id] || affiliates.site.domain;
   const urlB = affiliates.verifactu_links[toolB.id] || affiliates.site.domain;
-  const siteUrl = (affiliates.site.domain || 'https://radarverifactu.pages.dev').replace(/\/+$/, '');
+  const siteUrl = (affiliates.site.domain || 'https://radar-verifactu.pages.dev').replace(/\/+$/, '');
   const vsUrl = `${siteUrl}/vs/${toolA.id}-vs-${toolB.id}.html`;
 
   return {
