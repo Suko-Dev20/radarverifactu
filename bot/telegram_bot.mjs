@@ -95,21 +95,36 @@ async function generateWithGeminiIfConfigured(promptText) {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) return null;
 
-  const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${encodeURIComponent(apiKey)}`;
-  const res = await fetch(endpoint, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      contents: [{ parts: [{ text: promptText }] }]
-    })
-  });
+  const models = ['gemini-3-flash-preview', 'gemini-3.8-flash', 'gemini-flash-latest'];
+  const fullPrompt = `${promptText}\n\nREGLAS ESTRICTAS DE FORMATO:\n- Devuelve SOLO el texto del mensaje listo para Telegram usando únicamente etiquetas HTML permitidas por Telegram (<b>, <i>, <u>, <code>, <a href="...">).\n- NO uses etiquetas <p>, <br>, <ul>, <li>, <div> ni bloques de código markdown (\`\`\`).\n- Mantén los saltos de línea normales.`;
 
-  if (!res.ok) {
-    throw new Error(`Gemini API HTTP ${res.status}`);
+  let lastError = 'Sin respuesta';
+  for (const model of models) {
+    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey)}`;
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: fullPrompt }] }]
+      })
+    });
+
+    if (!res.ok) {
+      lastError = `${model} HTTP ${res.status}`;
+      continue;
+    }
+
+    const data = await res.json();
+    let text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+    if (text) {
+      return text
+        .replace(/^```(?:html)?\s*/i, '')
+        .replace(/\s*```$/i, '')
+        .trim();
+    }
   }
-  const data = await res.json();
-  const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-  return text ? text.trim() : null;
+
+  throw new Error(`Gemini API (${lastError})`);
 }
 
 async function sendTelegramMessage(htmlText) {
