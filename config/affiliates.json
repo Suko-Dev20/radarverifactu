@@ -1,0 +1,28 @@
+{
+  "site": {
+    "name": "RadarVerifactu",
+    "tagline": "Comparador Verifactu + Chollos de Software sin Cuotas Mensuales",
+    "domain": "https://radarverifactu.pages.dev",
+    "telegram_channel_url": "https://t.me/radarverifactu"
+  },
+  "verifactu_links": {
+    "holded": "https://www.holded.com/es?via=TU_ID_AFILIADO",
+    "quipu": "https://getquipu.com/es/?ref=TU_ID_AFILIADO",
+    "billin": "https://www.billin.net/?ref=TU_ID_AFILIADO",
+    "contasimple": "https://www.contasimple.com/?ref=TU_ID_AFILIADO",
+    "declarando": "https://declarando.es/?ref=TU_ID_AFILIADO",
+    "qonto": "https://qonto.com/es?r=TU_ID_AFILIADO"
+  },
+  "lifetime_links": {
+    "appsumo_general": "https://appsumo.8odi.net/TU_ID_IMPACT",
+    "tidycal_calendly_alt": "https://appsumo.8odi.net/c/TU_ID_IMPACT/tidycal",
+    "signnow_docusign_alt": "https://appsumo.8odi.net/c/TU_ID_IMPACT/firma-legal",
+    "acumbamail_mailchimp_alt": "https://appsumo.8odi.net/c/TU_ID_IMPACT/email-marketing",
+    "robomotion_chatbot_alt": "https://appsumo.8odi.net/c/TU_ID_IMPACT/chatbot-ia",
+    "crm_lifetime_alt": "https://appsumo.8odi.net/c/TU_ID_IMPACT/crm-pyme",
+    "sendspark_video_alt": "https://appsumo.8odi.net/c/TU_ID_IMPACT/video-propuestas"
+  },
+  "hosting_links": {
+    "hostinger": "https://hostinger.es?REFERRALCODE=TU_ID_HOSTINGER"
+  }
+}

@@ -1,0 +1,33 @@
+name: RadarPyme Daily Telegram Bot
+
+on:
+  schedule:
+    # Se ejecuta cada día a las 08:00 UTC (09:00 en España en invierno / 10:00 en verano)
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Tipo de publicación (auto, deal, verifactu)'
+        required: false
+        default: 'auto'
+
+jobs:
+  publish-telegram:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Publicar en Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          MODE="${{ github.event.inputs.mode || 'auto' }}"
+          node bot/telegram_bot.mjs --mode="$MODE"

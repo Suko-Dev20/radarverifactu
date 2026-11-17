@@ -1,0 +1,13 @@
+{
+  "name": "verifactu-chollos-ia",
+  "version": "1.0.0",
+  "description": "RadarPyme: Comparador Verifactu + Cazador de Chollos Lifetime + Bot Telegram automatizado",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build_site.mjs",
+    "serve": "node scripts/serve.mjs",
+    "bot:deal": "node bot/telegram_bot.mjs --dry-run --mode=deal",
+    "bot:verifactu": "node bot/telegram_bot.mjs --dry-run --mode=verifactu",
+    "bot:send": "node bot/telegram_bot.mjs"
+  }
+}

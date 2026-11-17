@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RadarVerifactu — Calculadora Verifactu y Chollos de Software Pago Único</title>
+  <meta name="description" content="Comparador Verifactu + Chollos de Software sin Cuotas Mensuales">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-badge">RV</span>
+        <span class="brand-text">RadarVerifactu</span>
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="index.html#calculadora">Calculadora</a>
+        <a href="index.html#comparador">Software Verifactu</a>
+        <a href="index.html#chollos">Chollos Pago Único</a>
+        <a href="index.html#directorio">Comparativas</a>
+      </nav>
+      <a href="https://t.me/radarverifactu" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+        Canal Telegram ↗
+      </a>
+    </div>
+  </header>
+  <main>
+    
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-center">
+        <span class="pill"><span class="pill-dot"></span> Ley Antifraude España · Verifactu + Ahorro SaaS</span>
+        <h1>Elige tu Software Verifactu y elimina suscripciones mensuales caras</h1>
+        <p class="lead">
+          Compara los programas de facturación homologados en España y descubre qué herramientas de <strong>pago único de por vida</strong> sustituyen a cuotas de 15 €–40 €/mes.
+        </p>
+        <div class="hero-actions">
+          <a href="#calculadora" class="btn btn-primary">Usar Calculadora Verifactu + Ahorro</a>
+          <a href="#chollos" class="btn btn-secondary">Ver Chollos Pago Único</a>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-value">100% Verifactu</span>
+          <span class="stat-label">Programas analizados listos para el reglamento antifraude y Facturae</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">+1.000 €/año</span>
+          <span class="stat-label">Ahorro medio sustituyendo SaaS mensuales por licencias de pago único</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">21 Guías</span>
+          <span class="stat-label">Comparativas directas cara a cara y rankings por profesión</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="calculadora" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker">Herramienta interactiva</span>
+        <h2>Calculadora Verifactu + Ahorro en Software</h2>
+        <p>Indica tu perfil de negocio y qué suscripciones mensuales pagas hoy para calcular tu combinación óptima y cuánto dinero ahorras el primer año.</p>
+      </div>
+
+      <div class="calc-wrapper">
+        <div>
+          <div class="calc-step">
+            <div class="calc-step-title"><span class="step-num">1</span> Tu negocio y facturación</div>
+            <div class="form-grid">
+              <div class="field">
+                <label for="calc-profile">Tipo de actividad</label>
+                <select id="calc-profile">
+                  <option value="autonomo">Autónomo / Freelance</option>
+                  <option value="pyme">Pyme / Sociedad Limitada</option>
+                  <option value="servicios">Agencia / Servicios / Clínica</option>
+                  <option value="comercio">Comercio / Tienda / Reformas</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="calc-volume">Facturas al mes</label>
+                <select id="calc-volume">
+                  <option value="bajo">1 a 15 facturas/mes</option>
+                  <option value="medio">15 a 50 facturas/mes</option>
+                  <option value="alto">Más de 50 facturas/mes</option>
+                </select>
+              </div>
+            </div>
+            <div class="field" style="margin-top:12px;">
+              <label for="calc-taxes">¿Quieres que el programa te ayude o presente modelos de impuestos?</label>
+              <select id="calc-taxes">
+                <option value="no">No, ya tengo gestoría o solo quiero facturar</option>
+                <option value="si">Sí, quiero previsión o presentación automática</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="calc-step" style="margin-bottom:14px;">
+            <div class="calc-step-title"><span class="step-num">2</span> ¿Qué cuotas mensuales quieres eliminar?</div>
+            <div class="deals-checklist">
+              
+      <label class="deal-check">
+        <input type="checkbox" name="calc-deal" value="tidycal_calendly_alt" checked>
+        <span class="deal-check-meta">
+          <strong>Calendly Pro (15 €/mes)</strong>
+          <span>Cambiar por Reservas y Citas (29 € único)</span>
+        </span>
+      </label>
+      <label class="deal-check">
+        <input type="checkbox" name="calc-deal" value="signnow_docusign_alt" checked>
+        <span class="deal-check-meta">
+          <strong>DocuSign Standard (25 €/mes)</strong>
+          <span>Cambiar por Firma Electrónica (49 € único)</span>
+        </span>
+      </label>
+      <label class="deal-check">
+        <input type="checkbox" name="calc-deal" value="acumbamail_mailchimp_alt" >
+        <span class="deal-check-meta">
+          <strong>Mailchimp Standard (29 €/mes)</strong>
+          <span>Cambiar por Email Marketing (49 € único)</span>
+        </span>
+      </label>
+      <label class="deal-check">
+        <input type="checkbox" name="calc-deal" value="robomotion_chatbot_alt" >
+        <span class="deal-check-meta">
+          <strong>Intercom / Crisp Pro (39 €/mes)</strong>
+          <span>Cambiar por Atención al Cliente IA (69 € único)</span>
+        </span>
+      </label>
+      <label class="deal-check">
+        <input type="checkbox" name="calc-deal" value="crm_lifetime_alt" >
+        <span class="deal-check-meta">
+          <strong>Pipedrive Essential (24 €/mes)</strong>
+          <span>Cambiar por CRM y Ventas (59 € único)</span>
+        </span>
+      </label>
+      <label class="deal-check">
+        <input type="checkbox" name="calc-deal" value="sendspark_video_alt" >
+        <span class="deal-check-meta">
+          <strong>Loom Business (14 €/mes)</strong>
+          <span>Cambiar por Vídeos y Propuestas (39 € único)</span>
+        </span>
+      </label>
+            </div>
+          </div>
+
+          <button id="calc-run-btn" type="button" class="btn btn-primary" style="width:100%;">
+            Recalcular combinación óptima y ahorro
+          </button>
+        </div>
+
+        <div class="calc-results" aria-live="polite">
+          <div class="savings-banner">
+            <div class="savings-metric metric-highlight">
+              <small>Ahorro neto Año 1</small>
+              <strong id="metric-year1">+0 €</strong>
+            </div>
+            <div class="savings-metric">
+              <small>Ahorro en 3 años</small>
+              <strong id="metric-year3">+0 €</strong>
+            </div>
+            <div class="savings-metric">
+              <small>Amortización</small>
+              <strong id="metric-payback">—</strong>
+            </div>
+          </div>
+
+          <div class="result-block">
+            <h3>Tu Top 2 Software Verifactu recomendado</h3>
+            <div id="calc-rec-tools" class="rec-list"></div>
+          </div>
+
+          <div class="result-block">
+            <h3>Tus Chollos de Pago Único seleccionados</h3>
+            <div id="calc-rec-deals" class="rec-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="comparador" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker">Software homologado</span>
+        <h2>Comparador de Programas Verifactu en España</h2>
+        <p>Filtra según tu tipo de negocio para ver los precios reales, pruebas gratuitas y puntos fuertes de cada plataforma.</p>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all" type="button" aria-pressed="true">Todos (6)</button>
+        <button class="filter-btn" data-filter="autonomo" type="button" aria-pressed="false">Autónomos</button>
+        <button class="filter-btn" data-filter="pyme" type="button" aria-pressed="false">Pymes / S.L.</button>
+        <button class="filter-btn" data-filter="servicios" type="button" aria-pressed="false">Servicios y Agencias</button>
+        <button class="filter-btn" data-filter="comercio" type="button" aria-pressed="false">Comercios</button>
+      </div>
+
+      <div class="cards-grid">
+        
+      <article class="tool-card" data-profiles="pyme,servicios,comercio">
+        <div>
+          <div class="tool-top">
+            <div class="tool-identity">
+              <span class="tool-avatar">HO</span>
+              <div>
+                <h3>Holded</h3>
+                <span class="badge badge-green">Verifactu + Facturae</span>
+              </div>
+            </div>
+            <span class="score-pill">9.5/10</span>
+          </div>
+          <div class="tool-price">Desde 14,50 €/mes (50% dto. los 3 primeros meses)</div>
+          <p class="tool-desc">ERP todo en uno líder para pymes y autónomos en crecimiento</p>
+          <ul class="check-list">
+            <li>100% adaptado a Verifactu, TicketBAI y Facturae</li><li>Sincronización bancaria automática y remesas SEPA</li><li>Incluye CRM, gestión de proyectos e inventario</li>
+          </ul>
+        </div>
+        <div>
+          <a href="https://www.holded.com/es?via=TU_ID_AFILIADO" target="_blank" rel="sponsored noopener" class="btn btn-primary" style="width:100%;">
+            Probar Holded (14 días gratis sin tarjeta) ↗
+          </a>
+        </div>
+      </article>
+      <article class="tool-card" data-profiles="autonomo,pyme,servicios">
+        <div>
+          <div class="tool-top">
+            <div class="tool-identity">
+              <span class="tool-avatar">QU</span>
+              <div>
+                <h3>Quipu</h3>
+                <span class="badge badge-green">Verifactu + Facturae</span>
+              </div>
+            </div>
+            <span class="score-pill">9.2/10</span>
+          </div>
+          <div class="tool-price">Desde 14 €/mes</div>
+          <p class="tool-desc">Facturación y control de impuestos pensado para ahorrar tiempo con tu gestoría</p>
+          <ul class="check-list">
+            <li>Lectura automática de tickets y gastos por OCR</li><li>Previsión en tiempo real de modelos 303 (IVA) y 130 (IRPF)</li><li>Acceso directo gratuito para tu gestoría</li>
+          </ul>
+        </div>
+        <div>
+          <a href="https://getquipu.com/es/?ref=TU_ID_AFILIADO" target="_blank" rel="sponsored noopener" class="btn btn-primary" style="width:100%;">
+            Probar Quipu (15 días gratis) ↗
+          </a>
+        </div>
+      </article>
+      <article class="tool-card" data-profiles="autonomo,servicios">
+        <div>
+          <div class="tool-top">
+            <div class="tool-identity">
+              <span class="tool-avatar">BI</span>
+              <div>
+                <h3>Billin</h3>
+                <span class="badge badge-green">Verifactu + Facturae</span>
+              </div>
+            </div>
+            <span class="score-pill">8.9/10</span>
+          </div>
+          <div class="tool-price">Desde 8 €/mes (Planes desde 0 € muy limitados)</div>
+          <p class="tool-desc">El programa más rápido y sencillo para crear y enviar facturas sin complicaciones</p>
+          <ul class="check-list">
+            <li>Interfaz ultra intuitiva: emites tu primera factura en 2 minutos</li><li>Seguimiento en tiempo real: sabes cuándo el cliente abre la factura</li><li>Certificado para Verifactu y Facturae</li>
+          </ul>
+        </div>
+        <div>
+          <a href="https://www.billin.net/?ref=TU_ID_AFILIADO" target="_blank" rel="sponsored noopener" class="btn btn-primary" style="width:100%;">
+            Probar Billin (30 días gratis) ↗
+          </a>
+        </div>
+      </article>
+      <article class="tool-card" data-profiles="autonomo,comercio">
+        <div>
+          <div class="tool-top">
+            <div class="tool-identity">
+              <span class="tool-avatar">CO</span>
+              <div>
+                <h3>Contasimple</h3>
+                <span class="badge badge-green">Verifactu + Facturae</span>
+              </div>
+            </div>
+            <span class="score-pill">8.6/10</span>
+          </div>
+          <div class="tool-price">Plan Básico gratis / Planes completos desde 9,95 €/mes</div>
+          <p class="tool-desc">Contabilidad, facturación e impuestos para autónomos a coste mínimo</p>
+          <ul class="check-list">
+            <li>Dispone de plan gratuito permanente (con límite de clientes/facturas)</li><li>Genera automáticamente borradores de modelos 303, 130, 111 y 390</li><li>Control de jornada laboral incluido</li>
+          </ul>
+        </div>
+        <div>
+          <a href="https://www.contasimple.com/?ref=TU_ID_AFILIADO" target="_blank" rel="sponsored noopener" class="btn btn-primary" style="width:100%;">
+            Probar Contasimple (Plan gratuito permanente + 1 mes Ultimate) ↗
+          </a>
+        </div>
+      </article>
+      <article class="tool-card" data-profiles="autonomo,servicios">
+        <div>
+          <div class="tool-top">
+            <div class="tool-identity">
+              <span class="tool-avatar">DE</span>
+              <div>
+                <h3>Declarando</h3>
+                <span class="badge badge-green">Verifactu + Facturae</span>
+              </div>
+            </div>
+            <span class="score-pill">9/10</span>
+          </div>
+          <div class="tool-price">Desde 39 €/mes (incluye presentación de impuestos y asesor)</div>
+          <p class="tool-desc">Asesoría fiscal online + software Verifactu para pagar menos impuestos</p>
+          <ul class="check-list">
+            <li>Incluye presentación automática de modelos ante Hacienda</li><li>Detector inteligente de gastos deducibles según tu epígrafe IAE</li><li>Soporte fiscal por chat/teléfono incluido en la cuota</li>
+          </ul>
+        </div>
+        <div>
+          <a href="https://declarando.es/?ref=TU_ID_AFILIADO" target="_blank" rel="sponsored noopener" class="btn btn-primary" style="width:100%;">
+            Probar Declarando (Llamada de diagnóstico fiscal gratuita) ↗
+          </a>
+        </div>
+      </article>
+      <article class="tool-card" data-profiles="autonomo,pyme,comercio,servicios">
+        <div>
+          <div class="tool-top">
+            <div class="tool-identity">
+              <span class="tool-avatar">QO</span>
+              <div>
+                <h3>Qonto</h3>
+                <span class="badge badge-green">Verifactu + Facturae</span>
+              </div>
+            </div>
+            <span class="score-pill">9.3/10</span>
+          </div>
+          <div class="tool-price">Desde 9 €/mes (Cuenta IBAN español + Tarjetas + Facturación)</div>
+          <p class="tool-desc">Cuenta bancaria para empresas y autónomos con facturación Verifactu integrada</p>
+          <ul class="check-list">
+            <li>IBAN español, tarjetas físicas y virtuales sin comisiones ocultas</li><li>Módulo integrado de emisión de facturas y digitalización de tickets con validez AEAT</li><li>Subcuentas para apartar el IVA y no llevarte sustos trimestrales</li>
+          </ul>
+        </div>
+        <div>
+          <a href="https://qonto.com/es?r=TU_ID_AFILIADO" target="_blank" rel="sponsored noopener" class="btn btn-primary" style="width:100%;">
+            Probar Qonto (30 días gratis) ↗
+          </a>
+        </div>
+      </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="chollos" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker">Lifetime Deals</span>
+        <h2>Chollos de Software de Pago Único</h2>
+        <p>Alternativas seleccionadas que se pagan una sola vez para toda la vida y sustituyen suscripciones mensuales recurrentes.</p>
+      </div>
+
+      <div class="cards-grid">
+        
+      <article class="deal-card">
+        <div>
+          <div class="tool-top">
+            <div class="tool-identity">
+              <span class="tool-avatar">TI</span>
+              <div>
+                <span class="badge badge-neutral">Reservas y Citas</span>
+              </div>
+            </div>
+            <span class="badge badge-green mono">-151 € año 1</span>
+          </div>
+          <h3 style="margin: 0 0 6px; font-size: 1.05rem; font-weight: 600; color: var(--foreground);">TidyCal (Alternativa a Calendly)</h3>
+          <p class="tool-desc">Agenda reuniones con clientes, cobra citas por Stripe/PayPal y sincroniza Google Calendar sin pagar 15 € todos los meses.</p>
+          <div class="deal-pricing-box">
+            <div>
+              <span class="price-caption">En vez de Calendly Pro</span>
+              <span class="price-old">15 €/mes (180 €/año)</span>
+            </div>
+            <div style="text-align:right;">
+              <span class="price-caption">Pago único</span>
+              <span class="price-once">29 €</span>
+            </div>
+          </div>
+          <ul class="check-list" style="margin-top:12px;">
+            <li>Tipos de cita ilimitados y recordatorios automáticos por email</li><li>Cobro directo antes de confirmar la reunión</li><li>Integración con Google Meet, Zoom y Teams en un clic</li>
+          </ul>
+        </div>
+        <a href="https://appsumo.8odi.net/c/TU_ID_IMPACT/tidycal" target="_blank" rel="sponsored noopener" class="btn btn-secondary" style="width:100%;">
+          Ver oferta Pago Único ↗
+        </a>
+      </article>
+      <article class="deal-card">
+        <div>
+          <div class="tool-top">
+            <div class="tool-identity">
+              <span class="tool-avatar">FI</span>
+              <div>
+                <span class="badge badge-neutral">Firma Electrónica</span>
+              </div>
+            </div>
+            <span class="badge badge-green mono">-251 € año 1</span>
+          </div>
+          <h3 style="margin: 0 0 6px; font-size: 1.05rem; font-weight: 600; color: var(--foreground);">FirmaLegal Pro (Alternativa a DocuSign)</h3>
+          <p class="tool-desc">Envía presupuestos y contratos para firmar desde el móvil con validez legal y sello de tiempo por un único pago.</p>
+          <div class="deal-pricing-box">
+            <div>
+              <span class="price-caption">En vez de DocuSign Standard</span>
+              <span class="price-old">25 €/mes (300 €/año)</span>
+            </div>
+            <div style="text-align:right;">
+              <span class="price-caption">Pago único</span>
+              <span class="price-once">49 €</span>
+            </div>
+          </div>
+          <ul class="check-list" style="margin-top:12px;">
+            <li>Plantillas reutilizables de contratos y hojas de encargo</li><li>Registro de auditoría IP + certificado PDF descargable</li><li>Recordatorios automáticos si el cliente no ha firmado</li>
+          </ul>
+        </div>
+        <a href="https://appsumo.8odi.net/c/TU_ID_IMPACT/firma-legal" target="_blank" rel="sponsored noopener" class="btn btn-secondary" style="width:100%;">
+          Ver oferta Pago Único ↗
+        </a>
+      </article>
+      <article class="deal-card">
+        <div>
+          <div class="tool-top">
+            <div class="tool-identity">
+              <span class="tool-avatar">SE</span>
+              <div>
+                <span class="badge badge-neutral">Email Marketing</span>
+              </div>
+            </div>
+            <span class="badge badge-green mono">-299 € año 1</span>
+          </div>
+          <h3 style="margin: 0 0 6px; font-size: 1.05rem; font-weight: 600; color: var(--foreground);">SendFox / Suite Email (Alternativa a Mailchimp)</h3>
+          <p class="tool-desc">Envía newsletters, promociones y secuencias automáticas de bienvenida a tu base de clientes sin penalizaciones por suscriptor.</p>
+          <div class="deal-pricing-box">
+            <div>
+              <span class="price-caption">En vez de Mailchimp Standard</span>
+              <span class="price-old">29 €/mes (348 €/año)</span>
+            </div>
+            <div style="text-align:right;">
+              <span class="price-caption">Pago único</span>
+              <span class="price-once">49 €</span>
+            </div>
+          </div>
+          <ul class="check-list" style="margin-top:12px;">
+            <li>Automatizaciones de seguimiento tras pedir presupuesto</li><li>Formularios de captación para tu web en 2 minutos</li><li>Hasta 5.000 contactos incluidos con pago único</li>
+          </ul>
+        </div>
+        <a href="https://appsumo.8odi.net/c/TU_ID_IMPACT/email-marketing" target="_blank" rel="sponsored noopener" class="btn btn-secondary" style="width:100%;">
+          Ver oferta Pago Único ↗
+        </a>
+      </article>
+      <article class="deal-card">
+        <div>
+          <div class="tool-top">
+            <div class="tool-identity">
+              <span class="tool-avatar">CH</span>
+              <div>
+                <span class="badge badge-neutral">Atención al Cliente IA</span>
+              </div>
+            </div>
+            <span class="badge badge-green mono">-399 € año 1</span>
+          </div>
+          <h3 style="margin: 0 0 6px; font-size: 1.05rem; font-weight: 600; color: var(--foreground);">ChatFlow IA (Alternativa a Intercom / Zendesk)</h3>
+          <p class="tool-desc">Entrena un asistente con los PDFs y tarifas de tu negocio para responder preguntas frecuentes y captar leads mientras duermes.</p>
+          <div class="deal-pricing-box">
+            <div>
+              <span class="price-caption">En vez de Intercom / Crisp Pro</span>
+              <span class="price-old">39 €/mes (468 €/año)</span>
+            </div>
+            <div style="text-align:right;">
+              <span class="price-caption">Pago único</span>
+              <span class="price-once">69 €</span>
+            </div>
+          </div>
+          <ul class="check-list" style="margin-top:12px;">
+            <li>Entrenamiento en segundos con tu web o lista de precios</li><li>Captura nombre, teléfono y email antes de pasar a humano</li><li>Widget ligero en español para cualquier página web</li>
+          </ul>
+        </div>
+        <a href="https://appsumo.8odi.net/c/TU_ID_IMPACT/chatbot-ia" target="_blank" rel="sponsored noopener" class="btn btn-secondary" style="width:100%;">
+          Ver oferta Pago Único ↗
+        </a>
+      </article>
+      <article class="deal-card">
+        <div>
+          <div class="tool-top">
+            <div class="tool-identity">
+              <span class="tool-avatar">FL</span>
+              <div>
+                <span class="badge badge-neutral">CRM y Ventas</span>
+              </div>
+            </div>
+            <span class="badge badge-green mono">-229 € año 1</span>
+          </div>
+          <h3 style="margin: 0 0 6px; font-size: 1.05rem; font-weight: 600; color: var(--foreground);">FlowCRM (Alternativa a Pipedrive / HubSpot)</h3>
+          <p class="tool-desc">Tablero visual de oportunidades para saber qué presupuestos están pendientes de aceptar y automatizar el seguimiento.</p>
+          <div class="deal-pricing-box">
+            <div>
+              <span class="price-caption">En vez de Pipedrive Essential</span>
+              <span class="price-old">24 €/mes (288 €/año)</span>
+            </div>
+            <div style="text-align:right;">
+              <span class="price-caption">Pago único</span>
+              <span class="price-once">59 €</span>
+            </div>
+          </div>
+          <ul class="check-list" style="margin-top:12px;">
+            <li>Embudos ilimitados de ventas por fases</li><li>Alertas automáticas para llamar a clientes pendientes</li><li>Importación de contactos desde Excel en un clic</li>
+          </ul>
+        </div>
+        <a href="https://appsumo.8odi.net/c/TU_ID_IMPACT/crm-pyme" target="_blank" rel="sponsored noopener" class="btn btn-secondary" style="width:100%;">
+          Ver oferta Pago Único ↗
+        </a>
+      </article>
+      <article class="deal-card">
+        <div>
+          <div class="tool-top">
+            <div class="tool-identity">
+              <span class="tool-avatar">VI</span>
+              <div>
+                <span class="badge badge-neutral">Vídeos y Propuestas</span>
+              </div>
+            </div>
+            <span class="badge badge-green mono">-129 € año 1</span>
+          </div>
+          <h3 style="margin: 0 0 6px; font-size: 1.05rem; font-weight: 600; color: var(--foreground);">VideoPitch Pro (Alternativa a Loom Business)</h3>
+          <p class="tool-desc">Graba tu pantalla explicando un presupuesto o tutorial y envíalo con un enlace limpio y botón de aceptación.</p>
+          <div class="deal-pricing-box">
+            <div>
+              <span class="price-caption">En vez de Loom Business</span>
+              <span class="price-old">14 €/mes (168 €/año)</span>
+            </div>
+            <div style="text-align:right;">
+              <span class="price-caption">Pago único</span>
+              <span class="price-once">39 €</span>
+            </div>
+          </div>
+          <ul class="check-list" style="margin-top:12px;">
+            <li>Grabación ilimitada en HD sin marcas de agua</li><li>Botón de llamada a la acción debajo del vídeo</li><li>Notificación cuando el cliente ve tu propuesta</li>
+          </ul>
+        </div>
+        <a href="https://appsumo.8odi.net/c/TU_ID_IMPACT/video-propuestas" target="_blank" rel="sponsored noopener" class="btn btn-secondary" style="width:100%;">
+          Ver oferta Pago Único ↗
+        </a>
+      </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="directorio" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker">Directorio</span>
+        <h2>Comparativas Cara a Cara y Guías por Sector</h2>
+        <p>Consulta nuestras fichas detalladas si dudas entre dos plataformas concretas o buscas el stack ideal para tu profesión.</p>
+      </div>
+
+      <div class="directory-grid">
+        <div class="dir-box">
+          <h3>Comparativas Directas (15 análisis)</h3>
+          <div class="dir-links">
+            <a class="dir-link" href="vs/holded-vs-quipu.html">Holded vs Quipu</a><a class="dir-link" href="vs/holded-vs-billin.html">Holded vs Billin</a><a class="dir-link" href="vs/holded-vs-contasimple.html">Holded vs Contasimple</a><a class="dir-link" href="vs/holded-vs-declarando.html">Holded vs Declarando</a><a class="dir-link" href="vs/holded-vs-qonto.html">Holded vs Qonto</a><a class="dir-link" href="vs/quipu-vs-billin.html">Quipu vs Billin</a><a class="dir-link" href="vs/quipu-vs-contasimple.html">Quipu vs Contasimple</a><a class="dir-link" href="vs/quipu-vs-declarando.html">Quipu vs Declarando</a><a class="dir-link" href="vs/quipu-vs-qonto.html">Quipu vs Qonto</a><a class="dir-link" href="vs/billin-vs-contasimple.html">Billin vs Contasimple</a><a class="dir-link" href="vs/billin-vs-declarando.html">Billin vs Declarando</a><a class="dir-link" href="vs/billin-vs-qonto.html">Billin vs Qonto</a><a class="dir-link" href="vs/contasimple-vs-declarando.html">Contasimple vs Declarando</a><a class="dir-link" href="vs/contasimple-vs-qonto.html">Contasimple vs Qonto</a><a class="dir-link" href="vs/declarando-vs-qonto.html">Declarando vs Qonto</a>
+          </div>
+        </div>
+        <div class="dir-box">
+          <h3>Guías por Profesión (6 sectores)</h3>
+          <div class="dir-links">
+            <a class="dir-link" href="sector/mejor-software-verifactu-autonomos-freelance.html">Autónomos / Freelance</a><a class="dir-link" href="sector/mejor-software-verifactu-reformas-construccion.html">Reformas y Oficios</a><a class="dir-link" href="sector/mejor-software-verifactu-clinicas-salud.html">Clínicas y Salud</a><a class="dir-link" href="sector/mejor-software-verifactu-hosteleria-comercios.html">Comercios y Tiendas</a><a class="dir-link" href="sector/mejor-software-verifactu-agencias-marketing.html">Agencias y Consultoras</a><a class="dir-link" href="sector/mejor-software-verifactu-inmobiliarias-consultoras.html">Inmobiliarias y Despachos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="telegram-banner">
+        <div>
+          <h2>Recibe 1 Chollo de Software y Alertas Verifactu cada mañana</h2>
+          <p>Nuestro radar automatizado analiza cada día nuevas ofertas de pago único y cambios fiscales para pymes y los resume en español en el canal de Telegram.</p>
+        </div>
+        <a href="https://t.me/radarverifactu" target="_blank" rel="noopener" class="btn btn-white">
+          Unirme gratis al Canal ↗
+        </a>
+      </div>
+    </div>
+  </section>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand footer-brand">
+          <span class="brand-badge">RV</span>
+          <span class="brand-text">RadarVerifactu</span>
+        </div>
+        <p class="footer-desc">
+          Directorio minimalista de software de facturación adaptado a Verifactu y selección diaria de herramientas de pago único sin cuotas mensuales para pymes y autónomos.
+        </p>
+      </div>
+      <div>
+        <h4>Secciones</h4>
+        <ul>
+          <li><a href="index.html#calculadora">Calculadora Verifactu + Ahorro</a></li>
+          <li><a href="index.html#comparador">Ranking Software Verifactu</a></li>
+          <li><a href="index.html#chollos">Cazador de Chollos Lifetime</a></li>
+          <li><a href="https://t.me/radarverifactu" target="_blank" rel="noopener">Alertas diarias en Telegram</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Transparencia</h4>
+        <p class="footer-note">
+          Algunos enlaces son enlaces de afiliado: si contratas una herramienta desde ellos, recibimos una comisión sin coste extra para ti. Precios orientativos sujetos a cambios de cada proveedor.
+        </p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 RadarVerifactu. Guía informativa, no constituye asesoramiento fiscal vinculante.</span>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
