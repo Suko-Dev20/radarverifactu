@@ -1,4 +1,4 @@
-name: RadarPyme Daily Telegram Bot
+name: RadarVerifactu Daily Telegram Bot
 
 on:
   schedule:
