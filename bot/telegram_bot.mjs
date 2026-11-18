@@ -153,8 +153,25 @@ async function sendTelegramMessage(htmlText) {
   return payload;
 }
 
+function isRealAffiliateUrl(url) {
+  return (
+    typeof url === 'string' &&
+    url.startsWith('http') &&
+    !url.includes('TU_ID_AFILIADO') &&
+    !url.includes('TU_ID_IMPACT') &&
+    !url.includes('TU_ID_HOSTINGER')
+  );
+}
+
 async function main() {
   const { dryRun, mode } = parseArgs(process.argv.slice(2));
+
+  const realTools = catalog.verifactu_tools.filter((t) =>
+    isRealAffiliateUrl(affiliates.verifactu_links[t.id])
+  );
+  const realDeals = catalog.lifetime_deals.filter((d) =>
+    isRealAffiliateUrl(affiliates.lifetime_links[d.affiliate_key])
+  );
 
   let chosenMode = mode;
   if (chosenMode === 'auto') {
@@ -164,13 +181,14 @@ async function main() {
 
   let postSpec;
   if (chosenMode === 'verifactu') {
-    const tools = catalog.verifactu_tools;
-    const toolA = pickByDay(tools);
+    const tools = realTools.length >= 2 ? realTools : catalog.verifactu_tools;
+    const toolA = realTools.length === 1 ? realTools[0] : pickByDay(tools);
     const idxA = tools.indexOf(toolA);
     const toolB = tools[(idxA + 1) % tools.length];
     postSpec = buildVerifactuPost(toolA, toolB);
   } else {
-    const deal = pickByDay(catalog.lifetime_deals);
+    const deals = realDeals.length > 0 ? realDeals : catalog.lifetime_deals;
+    const deal = pickByDay(deals);
     postSpec = buildDealPost(deal);
   }
 
